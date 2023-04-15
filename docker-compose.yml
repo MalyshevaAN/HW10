@@ -1,0 +1,10 @@
+version: "3"
+services:
+  database:
+    image: "postgres:13.3"
+    environment:
+      POSTGRES_DB: "notes"
+      POSTGRES_USER: "Nastia"
+      POSTGRES_PASSWORD: "kreker"
+    ports:
+      - "7432:5432"

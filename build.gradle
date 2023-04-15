@@ -1,0 +1,33 @@
+plugins {
+    id 'io.franzbecker.gradle-lombok' version '5.0.0'
+    id 'java'
+}
+
+
+lombok {
+    version = '1.18.26'
+    sha256 = ""
+}
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.postgresql:postgresql:42.3.8'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.10.1'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.10.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.7.1'
+    implementation 'org.eclipse.jetty:jetty-servlet:11.0.14'
+    implementation 'org.eclipse.jetty:jetty-server:11.0.14'
+    implementation 'org.projectlombok:lombok:1.18.26'
+    compileOnly 'jakarta.servlet:jakarta.servlet-api:5.0.0'
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
